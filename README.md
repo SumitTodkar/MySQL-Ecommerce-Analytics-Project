@@ -2,11 +2,13 @@
 
 ## 📌 Project Overview
 
-This project is an end-to-end **E-Commerce Sales & Customer Analytics project** built using **MySQL 8.0+ and Power BI**.
+This project is an end-to-end **E-Commerce Sales & Customer Analytics solution** built using **MySQL 8.0+ and Power BI**.
 
-The project simulates a real-world e-commerce business environment with customers, products, orders, payments, and returns. SQL is used for data management, analysis, and business insights, while Power BI is used to build an interactive executive dashboard.
+It simulates a real-world e-commerce business environment involving **customers, products, orders, payments, and product returns**. MySQL is used for **database design, data management, advanced SQL analysis, and business insights**, while Power BI is used to create an **interactive dashboard for sales, customer, product, and profitability analysis**.
 
-The dataset is **synthetically generated** for learning, portfolio, and analytics demonstration purposes.
+The project demonstrates practical skills in **SQL, advanced SQL concepts, business analytics, data modeling, DAX, and Power BI dashboard development**.
+
+The dataset is **synthetically generated** for learning, portfolio, and analytics demonstration purposes and does not contain real customer or business data.
 
 ---
 
@@ -317,38 +319,27 @@ MySQL-Ecommerce-Analytics-Project/
 ├── sql/
 │   ├── 01_database_setup.sql
 │   ├── 02_table_creation.sql
-│   ├── 03_data_generation.sql
+│   ├── 03_insert_data.sql
 │   ├── 04_constraints.sql
 │   ├── 05_basic_queries.sql
 │   ├── 06_joins.sql
 │   ├── 07_aggregate_functions.sql
 │   ├── 08_subqueries.sql
-│   ├── 09_ctes.sql
-│   ├── 10_window_functions.sql
-│   ├── 11_business_analytics.sql
-│   ├── 12_views.sql
-│   ├── 13_stored_procedures.sql
-│   ├── 14_functions.sql
-│   └── 15_triggers.sql
+│   ├── 09_window_functions.sql
+│   ├── 10_views.sql
+│   ├── 11_stored_procedures.sql
+│   ├── 12_functions.sql
+│   ├── 13_triggers.sql
+│   ├── 14_ctes.sql
+│   ├── 15_business_analytics.sql
+│   ├── 16_indexing.sql
+│   └── 17_query_optimization.sql
 │
 ├── powerbi/
 │   └── Ecommerce_Sales_Customer_Analytics.pbix
 │
-├── screenshots/
-│   ├── dashboard.png
-│   ├── 19_total_revenue.png
-│   ├── 19_monthly_revenue.png
-│   ├── 19_category_revenue.png
-│   ├── 19_top_products.png
-│   ├── 19_top_customers.png
-│   ├── 19_top_profit_products.png
-│   ├── 19_profit_margin_category.png
-│   ├── 19_return_reasons.png
-│   ├── 19_executive_kpi_summary.png
-│   └── 19_order_status_distribution.png
-│
-└── documentation/
-    └── business_questions.md
+└── Dashboard_screenshot/
+    └── dashboard.png
 ```
 
 ---
