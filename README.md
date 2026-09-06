@@ -1,158 +1,313 @@
-# 🛒 MySQL E-commerce Analytics Project
+# 🛒 MySQL E-Commerce Sales & Customer Analytics Project
 
 ## 📌 Project Overview
 
-This project is an end-to-end **MySQL E-commerce Analytics Project** designed to demonstrate practical SQL and database management skills using a real-world e-commerce scenario.
+This project is an end-to-end **E-Commerce Sales & Customer Analytics project** built using **MySQL 8.0+ and Power BI**.
 
-The project covers database creation, table design, relationships, constraints, data manipulation, data analysis, and advanced SQL concepts. The goal is to extract meaningful business insights from e-commerce data using SQL queries.
+The project simulates a real-world e-commerce business environment with customers, products, orders, payments, and returns. SQL is used for data management, analysis, and business insights, while Power BI is used to build an interactive executive dashboard.
+
+The dataset is **synthetically generated** for learning, portfolio, and analytics demonstration purposes.
 
 ---
 
 ## 🎯 Project Objectives
 
-* Design and manage a relational e-commerce database
-* Create tables with appropriate primary and foreign keys
-* Apply database constraints and relationships
-* Insert, update, and delete data
-* Perform data analysis using SQL queries
-* Analyze customers, products, orders, and sales
-* Use joins and subqueries to combine and analyze data
-* Apply aggregate and window functions
-* Create views for reusable analysis
-* Implement stored procedures, functions, and triggers
-* Practice database normalization and transaction concepts
+- Design and implement a relational e-commerce database
+- Generate and manage a large-scale synthetic dataset
+- Perform business analysis using SQL
+- Practice advanced SQL concepts
+- Analyze customer purchasing behavior
+- Analyze product and category performance
+- Calculate revenue, profit, and profitability metrics
+- Analyze payments and product returns
+- Build reusable SQL Views, Stored Procedures, Functions, and Triggers
+- Apply indexing and query optimization techniques
+- Connect MySQL with Power BI
+- Build an interactive E-Commerce Analytics Dashboard
+- Demonstrate practical SQL and Power BI skills for Data Analyst / SQL roles
 
 ---
 
 ## 🛠️ Technologies Used
 
-* **MySQL**
-* **MySQL Workbench**
-* **SQL**
-* **Git & GitHub**
+- **MySQL 8.0+**
+- **SQL**
+- **Power BI Desktop**
+- **DAX**
+- **MySQL Workbench**
+- **Git & GitHub**
 
 ---
 
-## 🗄️ Database Overview
+## 🗄️ Database Schema
 
-The database represents an e-commerce business and contains information related to:
+The project contains the following core tables:
 
-* Customers
-* Customers_addresses
-* Products
-* Categories
-* Orders
-* Order_items
-* Payments
-* Order_returns
+| Table | Description |
+|---|---|
+| `customers` | Customer personal and registration information |
+| `customer_addresses` | Customer address information |
+| `categories` | Product category information |
+| `products` | Product, pricing, cost, and inventory information |
+| `orders` | Customer order information |
+| `order_items` | Products purchased within each order |
+| `payments` | Payment transactions and statuses |
+| `product_returns` | Product return information |
 
-The tables are connected using primary and foreign key relationships to maintain data integrity.
+### Relationships
 
----
-
-## 📊 Key Analysis Areas
-
-The project focuses on answering business-related questions such as:
-
-### 👥 Customer Analysis
-
-* Who are the most valuable customers?
-* How many customers have placed orders?
-* Which customers have placed multiple orders?
-* What is the total spending of each customer?
-
-### 📦 Product Analysis
-
-* Which products are the best-selling?
-* Which products generate the highest revenue?
-* Which categories perform the best?
-* Which products have low sales?
-
-### 🛍️ Order Analysis
-
-* What is the total number of orders?
-* What is the average order value?
-* Which customers have the highest number of orders?
-* What are the order trends?
-
-### 💰 Sales Analysis
-
-* What is the total revenue?
-* Which products generate the most revenue?
-* Which categories contribute the most revenue?
-* What is the monthly/periodic sales performance?
+```text
+customers
+    │
+    ├── customer_addresses
+    │
+    └── orders
+          │
+          ├── payments
+          │
+          └── order_items
+                 │
+                 ├── products
+                 │      │
+                 │      └── categories
+                 │
+                 └── product_returns
+```
 
 ---
 
-## 📚 SQL Concepts Covered
+## 📊 Dataset Size
 
-### Basic SQL
+The project uses a large synthetic dataset designed to simulate an e-commerce environment.
 
-* `SELECT`
-* `WHERE`
-* `ORDER BY`
-* `GROUP BY`
-* `HAVING`
-* `DISTINCT`
-* `LIMIT`
+| Table | Approx. Records |
+|---|---:|
+| Customers | 5,000+ |
+| Customer Addresses | 5,000+ |
+| Categories | 10 |
+| Products | 70 |
+| Orders | 15,000 |
+| Order Items | 30,000+ |
+| Payments | 15,000 |
+| Product Returns | 1,000+ |
 
-### Data Manipulation
-
-* `INSERT`
-* `UPDATE`
-* `DELETE`
-
-### Database Definition
-
-* `CREATE`
-* `ALTER`
-* `DROP`
-* `TRUNCATE`
-
-### Constraints
-
-* Primary Key
-* Foreign Key
-* Unique
-* Not Null
-* Default
-* Check
-
-### SQL Functions
-
-* Aggregate Functions
-* String Functions
-* Date Functions
-* Numeric Functions
-* Conditional Functions
-
-### Joins
-
-* INNER JOIN
-* LEFT JOIN
-* RIGHT JOIN
-* CROSS JOIN
-
-### Advanced SQL
-
-* Subqueries
-* Common Table Expressions (CTEs)
-* Window Functions
-* Views
-* Stored Procedures
-* Functions
-* Triggers
-* Transactions
-
-### Database Concepts
-
-* Normalization
-* ACID Properties
-* Referential Integrity
+> **Note:** The data is synthetically generated and does not represent real customer or business data.
 
 ---
 
-## 📂 Project Structure
+# 🔎 SQL Analysis
+
+The project covers SQL concepts from basic queries to advanced business analytics.
+
+## Basic SQL
+
+- SELECT
+- WHERE
+- DISTINCT
+- ORDER BY
+- LIMIT
+- BETWEEN
+- IN
+- LIKE
+- IS NULL / IS NOT NULL
+- CASE
+- String Functions
+- Date Functions
+
+## DDL & DML
+
+- CREATE
+- ALTER
+- DROP
+- TRUNCATE
+- INSERT
+- UPDATE
+- DELETE
+
+## Constraints
+
+- PRIMARY KEY
+- FOREIGN KEY
+- UNIQUE
+- NOT NULL
+- DEFAULT
+- CHECK
+
+---
+
+## 🔗 Joins
+
+The project includes:
+
+- INNER JOIN
+- LEFT JOIN
+- RIGHT JOIN
+- CROSS JOIN
+- Multi-table JOINs
+
+---
+
+## 📊 Aggregate Functions
+
+The project uses:
+
+- COUNT()
+- SUM()
+- AVG()
+- MIN()
+- MAX()
+- GROUP BY
+- HAVING
+
+---
+
+## 🔍 Subqueries
+
+The project covers:
+
+- Scalar Subqueries
+- IN / NOT IN
+- EXISTS / NOT EXISTS
+- Correlated Subqueries
+- Derived Tables
+
+---
+
+## 🧩 Common Table Expressions (CTEs)
+
+The project includes:
+
+- Basic CTEs
+- Multiple CTEs
+- CTE-based Business Analysis
+
+---
+
+## 📈 Window Functions
+
+The project uses:
+
+- ROW_NUMBER()
+- RANK()
+- DENSE_RANK()
+- LAG()
+- LEAD()
+- PARTITION BY
+
+---
+
+# 💼 Business Analytics
+
+The project answers practical e-commerce business questions such as:
+
+- What is the total revenue?
+- What is the average order value?
+- Which products generate the most revenue?
+- Which products generate the most profit?
+- Which categories perform best?
+- What is the monthly revenue trend?
+- Who are the highest-value customers?
+- Which customers are repeat customers?
+- How can customers be segmented based on spending?
+- What is the customer lifetime value proxy?
+- What percentage of orders are cancelled?
+- What is the payment success rate?
+- What is the product return rate?
+- Why are customers returning products?
+- Which products have low stock?
+- Which products have never been ordered?
+- Which customers have never placed an order?
+
+---
+
+# ⚙️ Advanced SQL Features
+
+## Views
+
+Examples include:
+
+- Customer Orders View
+- Product Category View
+- Order Item Sales View
+- Customer Sales View
+- Monthly Sales View
+- Customer Segmentation View
+
+## Stored Procedures
+
+Examples include:
+
+- Get Customer Orders
+- Get Products by Category
+- Get Customer Spending
+
+## Functions
+
+Examples include:
+
+- Calculate Order Total
+- Calculate Product Profit
+- Calculate Customer Segment
+
+## Triggers
+
+Examples include:
+
+- Automatic Stock Reduction
+- Return Quantity Validation
+- Default Return Status
+
+---
+
+# ⚡ Indexing & Query Optimization
+
+The project also covers database performance concepts including:
+
+- Creating indexes
+- Identifying frequently used columns
+- Improving query performance
+- Using EXPLAIN
+- Comparing query execution plans
+- Optimizing analytical queries
+
+---
+
+# 📈 Power BI Dashboard
+
+The MySQL database is connected to Power BI to create an interactive:
+
+## E-Commerce Sales & Customer Analytics Dashboard
+
+### Dashboard KPIs
+
+- Total Revenue
+- Total Profit
+- Delivered Orders
+- Average Order Value
+- Profit Margin
+
+### Dashboard Visuals
+
+- Monthly Revenue Trend
+- Revenue by Category
+- Top 10 Products by Revenue
+- Profit by Category
+- Returns by Reason
+- Payment Amount by Method
+- Order Status Distribution
+- Top 10 Customers
+- Overall Profit Margin
+
+---
+
+# 📷 Dashboard Preview
+
+<img width="1322" height="737" alt="Screenshot 2026-09-06 110414" src="https://github.com/user-attachments/assets/714bc74d-c29f-4d12-a3a7-282c8146e684" />
+
+
+---
+
+# 📁 Project Structure
 
 ```text
 MySQL-Ecommerce-Analytics-Project/
@@ -162,72 +317,236 @@ MySQL-Ecommerce-Analytics-Project/
 ├── sql/
 │   ├── 01_database_setup.sql
 │   ├── 02_table_creation.sql
-│   ├── 03_insert_data.sql
+│   ├── 03_data_generation.sql
 │   ├── 04_constraints.sql
 │   ├── 05_basic_queries.sql
 │   ├── 06_joins.sql
-│   ├── 07_subqueries.sql
-│   ├── 08_aggregate_functions.sql
-│   ├── 09_window_functions.sql
-│   ├── 10_views.sql
-│   ├── 11_stored_procedures.sql
-│   ├── 12_functions.sql
-│   └── 13_triggers.sql
+│   ├── 07_aggregate_functions.sql
+│   ├── 08_subqueries.sql
+│   ├── 09_ctes.sql
+│   ├── 10_window_functions.sql
+│   ├── 11_business_analytics.sql
+│   ├── 12_views.sql
+│   ├── 13_stored_procedures.sql
+│   ├── 14_functions.sql
+│   └── 15_triggers.sql
+│
+├── powerbi/
+│   └── Ecommerce_Sales_Customer_Analytics.pbix
 │
 ├── screenshots/
-│   ├── database.png
-│   ├── tables.png
-│   ├── data.png
-│   └── query_outputs/
+│   ├── dashboard.png
+│   ├── 19_total_revenue.png
+│   ├── 19_monthly_revenue.png
+│   ├── 19_category_revenue.png
+│   ├── 19_top_products.png
+│   ├── 19_top_customers.png
+│   ├── 19_top_profit_products.png
+│   ├── 19_profit_margin_category.png
+│   ├── 19_return_reasons.png
+│   ├── 19_executive_kpi_summary.png
+│   └── 19_order_status_distribution.png
 │
-└── progress/
-    └── DAILY_PROGRESS.md
+└── documentation/
+    └── business_questions.md
 ```
 
 ---
 
-## 📈 Project Progress
+# 🚀 How to Run the Project
 
-The project is being developed step-by-step, with daily updates documenting completed tasks, SQL concepts practiced, and upcoming work.
+## 1. Create the Database
 
-See:
+Run:
 
-`progress/DAILY_PROGRESS.md`
+```sql
+CREATE DATABASE ecommerce_analytics;
 
----
+USE ecommerce_analytics;
+```
 
-## 🚀 Learning Outcomes
+## 2. Create Tables
 
-Through this project, I have gained practical experience in:
+Run the table creation SQL file.
 
-* Relational database design
-* Writing efficient SQL queries
-* Data manipulation and analysis
-* Working with multiple related tables
-* Solving business problems using SQL
-* Advanced SQL techniques
-* Database integrity and constraints
-* MySQL database management
+## 3. Generate / Load Data
 
----
+Run the data generation scripts to populate the database.
 
-## 🔮 Future Improvements
+## 4. Run SQL Analysis
 
-* Add more complex analytical queries
-* Optimize SQL queries for better performance
-* Add additional business scenarios
-* Connect the database with Power BI
-* Build an interactive e-commerce analytics dashboard
-* Add more advanced reporting and KPIs
+Execute the SQL analysis files to explore the data and answer business questions.
 
----
+## 5. Connect Power BI
 
-## 👨‍💻 Author
+Open Power BI Desktop and connect to:
 
-**Sumit Todkar**
+```text
+Server: localhost:3306
+Database: ecommerce_analytics
+```
 
-Aspiring Data Analyst / Data Engineer
+Use **Import** mode and load the required tables.
+
+## 6. Build / Open Dashboard
+
+Open the Power BI file to explore the interactive dashboard.
 
 ---
 
-⭐ If you find this project useful, feel free to explore the SQL scripts and analysis.
+# 📌 Key Skills Demonstrated
+
+## SQL
+
+- Relational Database Design
+- Primary & Foreign Keys
+- Constraints
+- Data Generation
+- Data Validation
+- Joins
+- Aggregations
+- Subqueries
+- CTEs
+- Window Functions
+- Views
+- Stored Procedures
+- Functions
+- Triggers
+- Indexing
+- Query Optimization
+- Business Analytics
+
+## Power BI
+
+- MySQL Data Connection
+- Data Modeling
+- Relationships
+- DAX Measures
+- KPI Cards
+- Interactive Visualizations
+- Business Dashboard Design
+- Sales Analytics
+- Customer Analytics
+- Product Analytics
+- Profitability Analysis
+
+---
+
+# 📊 Key Business KPIs
+
+| KPI | Description |
+|---|---|
+| Total Revenue | Revenue generated from delivered orders |
+| Total Profit | Profit generated from delivered sales |
+| Profit Margin | Profit as a percentage of revenue |
+| Delivered Orders | Number of successfully delivered orders |
+| Average Order Value | Average revenue per delivered order |
+| Total Customers | Number of unique customers |
+| Total Quantity Sold | Total quantity of products sold |
+| Return Rate | Percentage of products/orders returned |
+| Cancellation Rate | Percentage of cancelled orders |
+| Payment Success Rate | Percentage of successful payments |
+
+---
+
+# 🎓 Learning Outcomes
+
+Through this project, I gained practical experience in:
+
+- Designing relational databases
+- Working with large datasets
+- Writing complex SQL queries
+- Performing business-oriented data analysis
+- Building reusable SQL database objects
+- Creating analytical KPIs
+- Connecting SQL databases with Power BI
+- Creating interactive dashboards
+- Translating business questions into data-driven insights
+
+---
+
+# 🔄 Project Workflow
+
+```text
+Database Design
+       ↓
+Table Creation
+       ↓
+Constraints
+       ↓
+Data Generation
+       ↓
+Basic SQL Analysis
+       ↓
+Joins & Aggregations
+       ↓
+Subqueries
+       ↓
+CTEs
+       ↓
+Window Functions
+       ↓
+Business Analytics
+       ↓
+Views
+       ↓
+Stored Procedures
+       ↓
+Functions
+       ↓
+Triggers
+       ↓
+Indexing & Optimization
+       ↓
+Power BI Data Connection
+       ↓
+Data Modeling
+       ↓
+DAX Measures
+       ↓
+Interactive Dashboard
+```
+
+---
+
+# 🧪 Data Note
+
+The dataset used in this project is **synthetically generated** for portfolio and learning purposes.
+
+It is designed to simulate realistic e-commerce transactions and business scenarios without using real customer or business information.
+
+---
+
+# 📌 Project Status
+
+## ✅ Completed
+
+The project covers the complete workflow from database creation and SQL analysis to Power BI dashboard development.
+
+```text
+MySQL Database
+      ↓
+SQL Analysis
+      ↓
+Business Insights
+      ↓
+Power BI
+      ↓
+Interactive Dashboard
+```
+
+---
+
+# 👤 Author
+
+## Sumit Todkar
+
+Aspiring **Data Analyst / SQL Developer**
+
+### Skills
+
+`SQL` `MySQL` `Power BI` `DAX` `Python` `Data Analytics`
+
+---
+
+⭐ If you find this project useful, feel free to explore the SQL scripts and Power BI dashboard.
